@@ -1,6 +1,6 @@
 from django.contrib import admin
 from nonrelated_inlines.admin import NonrelatedStackedInline
-from .models import VirtualNetwork, Subnet, ResourceGroup, Location, Subscription
+from .models import VirtualNetwork, Subnet, ResourceGroup, Location, Subscription, DdosProtectionPlan
 
 admin.site.register(Subscription)
 admin.site.register(Location)
@@ -27,5 +27,13 @@ class VirtualNetworkAdmin(admin.ModelAdmin):
     exclude = ('create_cli', 'test_cli')
 
 
+class DDosProtectionPlanInline(admin.ModelAdmin):
+    model = DdosProtectionPlan
+    fieldsets = [
+        (None, {'fields': ['resource_group', 'name', ]}),
+    ]
+
+
 admin.site.register(ResourceGroup, ResourceGroupInline)
 admin.site.register(VirtualNetwork, VirtualNetworkAdmin)
+admin.site.register(DdosProtectionPlan, DDosProtectionPlanInline)

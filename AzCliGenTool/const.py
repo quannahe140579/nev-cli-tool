@@ -30,3 +30,11 @@ class Subnet:
         NAME = "--name"
         RESOURCE_GROUP = "--resource-group"
         VNET = "--vnet-name"
+
+
+class DDosProtectionPlan:
+    CREATE_PREFIX = "az network ddos-protection create"
+
+    class CreateCli(Enum):
+        NAME = "--name"
+        RESOURCE_GROUP = "--resource-group"
