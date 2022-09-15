@@ -1,0 +1,8 @@
+Django
+django-cors-headers
+djangorestframework
+whitenoise
+mssql-django
+pyodbc
+python-dotenv
+django-nonrelated-inlines
